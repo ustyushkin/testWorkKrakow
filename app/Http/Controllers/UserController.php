@@ -17,9 +17,6 @@ class UserController extends BaseController
    }
    public function list(Request $request)
    {
-       /*$start = $request->input('start');
-       $limit = $request->input('limit');
-       return $this->class::list($start,$limit);*/
        return $this->getList($request);
    }
    //create method
