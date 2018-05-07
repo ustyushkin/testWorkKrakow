@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class GroupModel extends Model
 {
     public $timestamps = false;
-    protected $connection = 'mysql';
+    protected $connection = 'mysqltest';
     protected $table = 'groups';
 
 }
