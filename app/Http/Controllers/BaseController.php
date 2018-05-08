@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class BaseController extends Controller
 {
-   public $data;
-   public $decodedData;
 
    public function IteratorExtJsResponse($jsonParams,$object,$property)
    {
@@ -30,10 +28,10 @@ class BaseController extends Controller
 
    public function process($request,$method)
    {
-       $this->data = $request->input('data');
-       $this->decodedData = json_decode($this->data);
+       $data = $request->input('data');
+       $decodedData = json_decode($data);
        try{
-           $message = $this->IteratorExtJsResponse($this->decodedData,$this->class,$method);
+           $message = $this->IteratorExtJsResponse($decodedData,$this->class,$method);
        }
        catch(Exception $e){
            $message['message']=$e->getMessage();
